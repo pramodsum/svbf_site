@@ -5,6 +5,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "SVBF | MI" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Svbf Site" %>">
     <%= stylesheet_link_tag "http://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
+    <%= stylesheet_link_tag "http://yandex.st/bootstrap/3.0.2/css/bootstrap-theme.min.css", media: "all" %>
     <%= javascript_include_tag "http://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -28,6 +29,7 @@
 
           <div class="col-md-8 container">
             <%= yield %>
+            <br>
           </div>
 
           <div class="col-md-4">
@@ -112,8 +114,6 @@
       $(document).ready(function(){
         var handler = Gmaps.build('Google');
         handler.buildMap({ internal: {id: 'geolocation'} }, function(){
-          if(navigator.geolocation)
-            navigator.geolocation.getCurrentPosition(displayOnMap);
         });
 
         function displayOnMap(position){
