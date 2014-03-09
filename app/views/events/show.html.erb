@@ -1,0 +1,14 @@
+<p><%= link_to 'Back', events_path, :class => "btn btn-default", :method => :get  %></p>
+
+<div class="col-md-10">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+		  <h4><%= @event.title %></h4>
+		  <p class="pull-right"><%= @event.date %></p>
+	  </div>
+	  <div class="panel-body">
+		<!-- <p><small><%= time_ago_in_words(@event.created_at) %> ago</small></p> -->
+		<p><%= @event.description %></p>
+	  </div>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+<div class="jumbotron">
+	<h1>Sringeri Vidhya Bharati Foundation</h1>
+	<p>Farmington Hills, Michigan</p>
+</div> 
+
+<div id='calendar'></div>
+
+<script type='text/javascript'>
+
+	$(document).ready(function() {
+	    $('#calendar').fullCalendar({
+			defaultView: 'agendaDay',
+	        events: {
+	            url: 'https://www.google.com/calendar/feeds/cb5f1ae7dfirnd08aq3n27qa20%40group.calendar.google.com/private-d84d902a73d643205d85a1bf7dd9cb02/basic',
+	            className: 'gcal-event',           // an option!
+	            currentTimezone: 'America/Chicago' // an option!
+	        }
+	    });
+	});
+
+</script>

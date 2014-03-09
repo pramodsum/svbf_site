@@ -1,0 +1,96 @@
+<%= form_for @event, :class => "form-horizontal" do |f| %>
+
+  <% if @event.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <strong><%= pluralize(@event.errors.count, "error") %> prohibited
+        this event from being saved: </strong>
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add Event</h3>
+  </div>
+  <div class="panel-body">
+      <div class="form-group">
+        <%= f.label :title %><br>
+        <%= f.text_field :title, :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :date %><br>
+        <%= f.text_field :date, :class => "form-control", id: 'dp1' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :time %><br>
+        <p class="help-block">Time must be in the the following format: ()</p>
+        <%= f.text_field :time, class: 'form-control' %>
+        <!-- <input id='timepicker' class='form-control input-small bootstrap-timepicker' type='text'> -->
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description %><br>
+        <%= f.text_area :description, :class => "form-control", :size =>"24x5" %>
+      </div>
+     
+      <p>
+        <%= f.submit :class => "btn" %>
+      </p>
+
+    <% end %>
+  </div>
+</div>
+
+
+<script>
+  if (top.location != location) {
+    top.location.href = document.location.href ;
+  }
+  $(function(){
+    window.prettyPrint && prettyPrint();
+    $('#dp1').datepicker({
+      format: 'mm-dd-yyyy'
+    });
+
+    // disabling dates
+    var nowTemp = new Date();
+    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+    var checkin = $('#dpd1').datepicker({
+      onRender: function(date) {
+        return date.valueOf() < now.valueOf() ? 'disabled' : '';
+      }
+    }).on('changeDate', function(ev) {
+      if (ev.date.valueOf() > checkout.date.valueOf()) {
+        var newDate = new Date(ev.date)
+        newDate.setDate(newDate.getDate() + 1);
+        checkout.setValue(newDate);
+      }
+      checkin.hide();
+      $('#dpd2')[0].focus();
+    }).data('datepicker');
+    var checkout = $('#dpd2').datepicker({
+      onRender: function(date) {
+        return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+      }
+    }).on('changeDate', function(ev) {
+      checkout.hide();
+    }).data('datepicker');
+  });
+
+  $(document).ready(function(){
+    $('#timepicker').timepicker({
+      template: 'dropdown',
+      minuteStep: 15,
+      showMeridian: true,
+      showSeconds: false,
+      defaultTime: '<%= Time.current %>'
+    });
+  });
+</script>
