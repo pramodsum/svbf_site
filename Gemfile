@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
+gem 'rails_12factor', group: :production
 
 # Devise
 # gem 'activeadmin', github: 'gregbell/active_admin'
@@ -30,7 +31,7 @@ gem 'fullcalendar-rails'
 gem 'simple_form'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
