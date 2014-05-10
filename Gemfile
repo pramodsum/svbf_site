@@ -4,13 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'rails_12factor', group: :production
 
-# Devise
-# gem 'activeadmin', github: 'gregbell/active_admin'
-# gem "activesupport", "~> 4.0.2"
-# gem 'actionpack', "~> 4.0.2"
-# gem "meta_search"
-gem 'devise'
-
 # Underscore
 gem 'underscore-rails'
 

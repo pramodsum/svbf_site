@@ -1,8 +1,6 @@
 SvbfSite::Application.routes.draw do
   
   resource :calendar, only: [:show], controller: :calendar
-
-  devise_for :admins
   
   get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.

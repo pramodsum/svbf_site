@@ -1,19 +1,31 @@
 <div class="well">
-  <!-- <%= button_to 'Create New Event', new_event_path, :class => "btn btn-default" %> -->
+  <%= link_to 'Create New Event', new_event_path, :class => "btn btn-default" %>
+  <br/><br/>
+  <% @events.each do |event| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4><%= event.title %></h4>
+      </div>
+      <div class="panel-body">
+      <p><%= event.description[0..250] %>...</p> 
+      <p id="time"><small><%= event.date %> | <%= time_ago_in_words(event.created_at) %> ago</small></p>
+      </div>
+    </div>
+  <% end %>
 
-  <div id='calendar'></div>
+  <!-- <div id='calendar'></div> -->
 
   <script type='text/javascript'>
 
-    $(document).ready(function() {
-        $('#calendar').fullCalendar({
-            events: {
-                url: 'https://www.google.com/calendar/feeds/cb5f1ae7dfirnd08aq3n27qa20%40group.calendar.google.com/private-d84d902a73d643205d85a1bf7dd9cb02/basic',
-                className: 'gcal-event',           // an option!
-                currentTimezone: 'America/Chicago' // an option!
-            }
-        });
-    });
+    // $(document).ready(function() {
+    //     $('#calendar').fullCalendar({
+    //         events: {
+    //             url: 'https://www.google.com/calendar/feeds/cb5f1ae7dfirnd08aq3n27qa20%40group.calendar.google.com/private-d84d902a73d643205d85a1bf7dd9cb02/basic',
+    //             className: 'gcal-event',           // an option!
+    //             currentTimezone: 'America/Chicago' // an option!
+    //         }
+    //     });
+    // });
 
   </script>
 </div>
