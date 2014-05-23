@@ -1,31 +1,22 @@
-<div class="well">
+<% if current_user %>
   <%= link_to 'Create New Event', new_event_path, :class => "btn btn-default" %>
-  <br/><br/>
-  <% @events.each do |event| %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4><%= event.title %></h4>
-      </div>
-      <div class="panel-body">
-      <p><%= event.description[0..250] %>...</p> 
-      <p id="time"><small><%= event.date %> | <%= time_ago_in_words(event.created_at) %> ago</small></p>
-      </div>
+<br/><br/>
+<% end %>
+
+<div id="calendar"></div>
+<br/>
+
+<% @events.each do |event| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= event.title %></h4>
     </div>
-  <% end %>
-
-  <!-- <div id='calendar'></div> -->
-
-  <script type='text/javascript'>
-
-    // $(document).ready(function() {
-    //     $('#calendar').fullCalendar({
-    //         events: {
-    //             url: 'https://www.google.com/calendar/feeds/cb5f1ae7dfirnd08aq3n27qa20%40group.calendar.google.com/private-d84d902a73d643205d85a1bf7dd9cb02/basic',
-    //             className: 'gcal-event',           // an option!
-    //             currentTimezone: 'America/Chicago' // an option!
-    //         }
-    //     });
-    // });
-
-  </script>
-</div>
+    <div class="panel-body">
+    <p><%= event.description %></p>
+    <p id="time"><small><%= time_ago_in_words(event.created_at) %> ago</small></p>
+    <% if current_user %>
+      <%= link_to 'Destroy', {:controller=>:events,:action=>:destroy, :id=>event}, :method=>:delete %>
+    <% end %>
+    </div>
+  </div>
+<% end %>

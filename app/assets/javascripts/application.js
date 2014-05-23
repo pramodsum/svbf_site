@@ -14,10 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require bootstrap-datepicker
-//= require bootstrap-timepicker
 //= require underscore-min
 //= require gmaps/google
 //= require fullcalendar
-//= require gcal
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .

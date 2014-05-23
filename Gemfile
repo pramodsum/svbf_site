@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 gem 'rails_12factor', group: :production
+gem "bcrypt-ruby", :require => "bcrypt"
 
 # Underscore
 gem 'underscore-rails'
@@ -12,7 +13,8 @@ gem 'gmaps4rails'
 
 #bootstrap
 gem 'bootstrap-sass'
-gem 'bootstrap-timepicker-rails'
+gem 'momentjs-rails', '~> 2.5.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0'
 group :development do
   gem 'rails_layout', github: 'RailsApps/rails_layout'
 end
@@ -45,7 +47,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

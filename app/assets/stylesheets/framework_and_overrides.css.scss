@@ -28,7 +28,7 @@ img {
 .submit {
   @extend .btn;
   @extend .btn-primary;
-  @extend .btn-lg;
+  @extend .btn-warning;
   }
 // apply styles to HTML elements
 // to make views framework-neutral

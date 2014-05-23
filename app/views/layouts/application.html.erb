@@ -92,10 +92,21 @@
 
           </div>
 
-        </div>
-        
+        </div>        
         <br>
+
+        <!-- ########################## FOOTER #############################-->
         <footer>
+          <small><center>
+            <% if current_user %>
+              Logged in as <%= current_user.email %>.
+              <%= link_to "Log out", log_out_path %>
+            <% else %>
+              <%= link_to "Sign up", sign_up_path %> or 
+              <%= link_to "Log in", log_in_path %>
+            <% end %>
+          </center></small>
+
           <h5 class="text-center"><small>
           Sringeri Vidya Bharati Foundation, USA. All rights reserved &copy; 2014<br>
           May the Grace of Sharadamba and blessings of the Acharya be with you all!<br>
@@ -104,6 +115,7 @@
           <% render 'layouts/disclaimer' %>
           </small></h5>
         </footer>
+
       </div>
     </main>
 
