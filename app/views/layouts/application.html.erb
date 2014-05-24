@@ -18,11 +18,21 @@
     </header>
     <main role="main">
       <% if notice %>
-        <p class="alert alert-notice"><%= notice %></p>
+        <div class="alert alert-info alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <%= notice %>
+        </div>
       <% end %>
       <% if alert %>
-        <p class="alert alert-error"><%= alert %></p>
+        <div class="alert alert-danger alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <%= alert %>
+        </div>
       <% end %>
+      <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong><i class="fa fa-bug fa-lg"></i> Warning!</strong> This website is currently under development. Report any bugs to the <strong><a href="mailto:sumedha.pramod@gmail.com">webmaster</a></strong>!
+      </div>
       <div class="well">
 
         <div class="row">

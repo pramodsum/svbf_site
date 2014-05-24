@@ -19,6 +19,9 @@ group :development do
   gem 'rails_layout', github: 'RailsApps/rails_layout'
 end
 
+# Fontawesome 
+gem "font-awesome-rails"
+
 # Bootstrap Calendar
 gem 'fullcalendar-rails'
 
