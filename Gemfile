@@ -22,6 +22,11 @@ end
 # Fontawesome 
 gem "font-awesome-rails"
 
+#CarrierWave
+gem 'free-image'
+gem 'imagemagick-binaries'
+gem 'exiftool'
+
 # Bootstrap Calendar
 gem 'fullcalendar-rails'
 

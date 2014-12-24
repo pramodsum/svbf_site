@@ -49,12 +49,19 @@ GEM
     coffee-script-source (1.7.0)
     erubis (2.7.0)
     execjs (2.0.2)
+    exiftool (0.6.0)
+      json
+    ffi (1.9.3)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
+    free-image (0.6.2)
+      ffi (>= 1.0.10)
     fullcalendar-rails (1.6.4.0)
     gmaps4rails (2.1.2)
     hike (1.2.3)
     i18n (0.6.9)
+    imagemagick-binaries (6.8.7.5.1)
+      sys-uname (= 0.9.0)
     jbuilder (2.0.7)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -117,6 +124,8 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    sys-uname (0.9.0)
+      ffi (>= 1.0.0)
     thor (0.19.1)
     thread_safe (0.3.3)
     tilt (1.4.1)
@@ -139,9 +148,12 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap3-datetimepicker-rails (~> 3.0.0)
   coffee-rails (~> 4.0.0)
+  exiftool
   font-awesome-rails
+  free-image
   fullcalendar-rails
   gmaps4rails
+  imagemagick-binaries
   jbuilder
   jquery-rails
   momentjs-rails (~> 2.5.0)
